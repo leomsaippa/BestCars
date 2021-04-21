@@ -10,13 +10,18 @@ import UIKit
 
 class CarTableViewController: UITableViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     let carViewCell = "CarViewCell"
     var cars: [Car] = []
     
     override func viewDidLoad() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
+        activityIndicator.color = UIColor.black
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getCars()
@@ -43,6 +48,9 @@ class CarTableViewController: UITableViewController {
     }
     
     func getCars() {
+        
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
 
         MockyCall.getCars(completion: {(cars,totalPages, error) in
             if cars.count > 0 {
@@ -55,6 +63,8 @@ class CarTableViewController: UITableViewController {
                         return
                     }
                     DispatchQueue.main.async {
+                        self.activityIndicator.isHidden = true
+                        self.activityIndicator.stopAnimating()
                         self.tableView.reloadData()
                         
                     }

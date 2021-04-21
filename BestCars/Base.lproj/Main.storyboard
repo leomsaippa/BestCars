@@ -16,6 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="M4X-BY-fIA">
+                            <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarViewCell" id="SOx-NC-6UX" customClass="CarViewCell" customModule="BestCars" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -44,6 +48,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Lxa-6a-A4d"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="M4X-BY-fIA" id="m2Z-KL-zOu"/>
                         <segue destination="BYZ-38-t0r" kind="show" id="WCg-Q9-CCx"/>
                     </connections>
                 </tableViewController>
