@@ -12,6 +12,12 @@
 		A30D10B0262E408500C0BC04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30D10AE262E408500C0BC04 /* Main.storyboard */; };
 		A30D10B2262E408600C0BC04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A30D10B1262E408600C0BC04 /* Assets.xcassets */; };
 		A30D10B5262E408600C0BC04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30D10B3262E408600C0BC04 /* LaunchScreen.storyboard */; };
+		A30D10C0262E478100C0BC04 /* MockyCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D10BF262E478100C0BC04 /* MockyCall.swift */; };
+		A30D10C3262E47A500C0BC04 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D10C2262E47A500C0BC04 /* RequestHelper.swift */; };
+		A30D10C6262E4CFF00C0BC04 /* CarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D10C5262E4CFF00C0BC04 /* CarResponse.swift */; };
+		A30D10CF262E4FF900C0BC04 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D10CE262E4FF900C0BC04 /* Car.swift */; };
+		A30D10D7262F862300C0BC04 /* CarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D10D6262F862300C0BC04 /* CarViewCell.swift */; };
+		A30D10DD262F909E00C0BC04 /* CarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D10DC262F909E00C0BC04 /* CarTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		A30D10B1262E408600C0BC04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A30D10B4262E408600C0BC04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A30D10B6262E408600C0BC04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A30D10BF262E478100C0BC04 /* MockyCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockyCall.swift; sourceTree = "<group>"; };
+		A30D10C2262E47A500C0BC04 /* RequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
+		A30D10C5262E4CFF00C0BC04 /* CarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarResponse.swift; sourceTree = "<group>"; };
+		A30D10CE262E4FF900C0BC04 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		A30D10D6262F862300C0BC04 /* CarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewCell.swift; sourceTree = "<group>"; };
+		A30D10DC262F909E00C0BC04 /* CarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,9 @@
 		A30D10A7262E408500C0BC04 /* BestCars */ = {
 			isa = PBXGroup;
 			children = (
+				A30D10D5262F834F00C0BC04 /* ViewController */,
+				A30D10C8262E4D3700C0BC04 /* Model */,
+				A30D10BE262E476A00C0BC04 /* Network */,
 				A30D10A8262E408500C0BC04 /* AppDelegate.swift */,
 				A30D10AC262E408500C0BC04 /* ViewController.swift */,
 				A30D10AE262E408500C0BC04 /* Main.storyboard */,
@@ -62,6 +77,33 @@
 				A30D10B6262E408600C0BC04 /* Info.plist */,
 			);
 			path = BestCars;
+			sourceTree = "<group>";
+		};
+		A30D10BE262E476A00C0BC04 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A30D10BF262E478100C0BC04 /* MockyCall.swift */,
+				A30D10C2262E47A500C0BC04 /* RequestHelper.swift */,
+				A30D10C5262E4CFF00C0BC04 /* CarResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A30D10C8262E4D3700C0BC04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A30D10CE262E4FF900C0BC04 /* Car.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A30D10D5262F834F00C0BC04 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A30D10D6262F862300C0BC04 /* CarViewCell.swift */,
+				A30D10DC262F909E00C0BC04 /* CarTableViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +177,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30D10AD262E408500C0BC04 /* ViewController.swift in Sources */,
+				A30D10DD262F909E00C0BC04 /* CarTableViewController.swift in Sources */,
 				A30D10A9262E408500C0BC04 /* AppDelegate.swift in Sources */,
+				A30D10CF262E4FF900C0BC04 /* Car.swift in Sources */,
+				A30D10C6262E4CFF00C0BC04 /* CarResponse.swift in Sources */,
+				A30D10D7262F862300C0BC04 /* CarViewCell.swift in Sources */,
+				A30D10C0262E478100C0BC04 /* MockyCall.swift in Sources */,
+				A30D10C3262E47A500C0BC04 /* RequestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
