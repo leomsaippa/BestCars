@@ -40,6 +40,13 @@ class CarTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("select")
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        let indexPath = self.tableView.indexPathForSelectedRow
+        detailController.currentCar = self.cars[indexPath!.row]
+        
+           
+        self.navigationController!.pushViewController(detailController, animated: true)
     }
     
 
