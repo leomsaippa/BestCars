@@ -13,7 +13,7 @@ class CarTableViewController: UITableViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let carViewCell = "CarViewCell"
-    var cars: [Car] = []
+    var cars: [CarModel] = []
     
     override func viewDidLoad() {
         self.tableView.delegate = self

@@ -9,14 +9,18 @@ import Foundation
 import UIKit
 
 class DetailViewController: UIViewController {
-    
-    var currentCar: Car!
+    var test = false
+    var currentCar: CarModel!
     
     @IBOutlet weak var detailImage: UIImageView!
     
     @IBOutlet weak var nameTextView: UITextView!
     @IBOutlet weak var priceTextView: UITextView!
     @IBOutlet weak var descriptionTextView: UITextView!
+    
+    @IBOutlet weak var backBtn: UIBarButtonItem!
+    
+    @IBOutlet weak var favBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,4 +36,34 @@ class DetailViewController: UIViewController {
         }
     }
 
+    @IBAction func onBackBtnClicked(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onFavBtnClicked(_ sender: Any) {
+     
+        if(!test){
+            favBtn.image = UIImage(systemName: "star")
+            let leo =  UserDefaults.standard.integer(forKey: "id")
+            
+            print("test \(leo)")
+
+            if(leo != 0) {
+                UserDefaults.standard.removeObject(forKey: "id")
+
+            }
+          
+
+           // favBtn.title = "Text"
+        } else {
+            favBtn.image = UIImage(systemName: "star.fill")
+            UserDefaults.standard.set(currentCar.id, forKey: "id")
+
+        }
+        test = !test
+
+        //favBtn.image = img
+        
+    }
+    
 }

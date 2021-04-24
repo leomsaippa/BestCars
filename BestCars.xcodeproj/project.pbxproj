@@ -14,10 +14,12 @@
 		A30D10C0262E478100C0BC04 /* MockyCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D10BF262E478100C0BC04 /* MockyCall.swift */; };
 		A30D10C3262E47A500C0BC04 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D10C2262E47A500C0BC04 /* RequestHelper.swift */; };
 		A30D10C6262E4CFF00C0BC04 /* CarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D10C5262E4CFF00C0BC04 /* CarResponse.swift */; };
-		A30D10CF262E4FF900C0BC04 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D10CE262E4FF900C0BC04 /* Car.swift */; };
 		A30D10D7262F862300C0BC04 /* CarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D10D6262F862300C0BC04 /* CarViewCell.swift */; };
 		A30D10DD262F909E00C0BC04 /* CarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D10DC262F909E00C0BC04 /* CarTableViewController.swift */; };
 		A30D10E2262FC6C400C0BC04 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D10E1262FC6C400C0BC04 /* DetailViewController.swift */; };
+		A3B5BC4E2633A4F100A4FEEF /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC4D2633A4F100A4FEEF /* FavoriteViewController.swift */; };
+		A3B5BC522634988800A4FEEF /* BestCars.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC502634988800A4FEEF /* BestCars.xcdatamodeld */; };
+		A3B5BC5B26349E3100A4FEEF /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC5A26349E3100A4FEEF /* CarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +32,12 @@
 		A30D10BF262E478100C0BC04 /* MockyCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockyCall.swift; sourceTree = "<group>"; };
 		A30D10C2262E47A500C0BC04 /* RequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
 		A30D10C5262E4CFF00C0BC04 /* CarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarResponse.swift; sourceTree = "<group>"; };
-		A30D10CE262E4FF900C0BC04 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		A30D10D6262F862300C0BC04 /* CarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewCell.swift; sourceTree = "<group>"; };
 		A30D10DC262F909E00C0BC04 /* CarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewController.swift; sourceTree = "<group>"; };
 		A30D10E1262FC6C400C0BC04 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A3B5BC4D2633A4F100A4FEEF /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		A3B5BC512634988800A4FEEF /* carModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = carModel.xcdatamodel; sourceTree = "<group>"; };
+		A3B5BC5A26349E3100A4FEEF /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +95,8 @@
 		A30D10C8262E4D3700C0BC04 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A30D10CE262E4FF900C0BC04 /* Car.swift */,
+				A3B5BC502634988800A4FEEF /* BestCars.xcdatamodeld */,
+				A3B5BC5A26349E3100A4FEEF /* CarModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 				A30D10D6262F862300C0BC04 /* CarViewCell.swift */,
 				A30D10DC262F909E00C0BC04 /* CarTableViewController.swift */,
 				A30D10E1262FC6C400C0BC04 /* DetailViewController.swift */,
+				A3B5BC4D2633A4F100A4FEEF /* FavoriteViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -178,8 +184,10 @@
 			files = (
 				A30D10DD262F909E00C0BC04 /* CarTableViewController.swift in Sources */,
 				A30D10A9262E408500C0BC04 /* AppDelegate.swift in Sources */,
-				A30D10CF262E4FF900C0BC04 /* Car.swift in Sources */,
 				A30D10C6262E4CFF00C0BC04 /* CarResponse.swift in Sources */,
+				A3B5BC522634988800A4FEEF /* BestCars.xcdatamodeld in Sources */,
+				A3B5BC5B26349E3100A4FEEF /* CarModel.swift in Sources */,
+				A3B5BC4E2633A4F100A4FEEF /* FavoriteViewController.swift in Sources */,
 				A30D10D7262F862300C0BC04 /* CarViewCell.swift in Sources */,
 				A30D10C0262E478100C0BC04 /* MockyCall.swift in Sources */,
 				A30D10C3262E47A500C0BC04 /* RequestHelper.swift in Sources */,
@@ -385,6 +393,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A3B5BC502634988800A4FEEF /* BestCars.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A3B5BC512634988800A4FEEF /* carModel.xcdatamodel */,
+			);
+			currentVersion = A3B5BC512634988800A4FEEF /* carModel.xcdatamodel */;
+			path = BestCars.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A30D109D262E408500C0BC04 /* Project object */;
 }

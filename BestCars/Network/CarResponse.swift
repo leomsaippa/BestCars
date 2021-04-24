@@ -8,7 +8,7 @@
 import Foundation
 
 struct CarResponse: Codable {
-    let cars: [Car]
+    let cars: [CarModel]
 }
 
 

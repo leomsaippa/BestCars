@@ -118,10 +118,23 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ze9-uH-I8r"/>
+                    <navigationItem key="navigationItem" id="Ze9-uH-I8r">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="r7b-x1-HJU">
+                            <connections>
+                                <action selector="onBackBtnClicked:" destination="BYZ-38-t0r" id="sK1-x2-Nry"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="star.fill" catalog="system" id="2F0-xL-lSL">
+                            <connections>
+                                <action selector="onFavBtnClicked:" destination="BYZ-38-t0r" id="LJc-Lj-CuG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="backBtn" destination="r7b-x1-HJU" id="hk5-di-VWn"/>
                         <outlet property="descriptionTextView" destination="CFF-Zx-KtK" id="GDM-ju-Sr3"/>
                         <outlet property="detailImage" destination="b3o-o2-8GV" id="q0W-uf-IWZ"/>
+                        <outlet property="favBtn" destination="2F0-xL-lSL" id="dhZ-lq-F10"/>
                         <outlet property="nameTextView" destination="iCP-g9-ruK" id="A49-3x-cg4"/>
                         <outlet property="priceTextView" destination="2fI-BR-CcA" id="cAf-6y-23j"/>
                     </connections>
@@ -132,6 +145,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

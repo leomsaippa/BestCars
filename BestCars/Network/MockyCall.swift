@@ -30,7 +30,7 @@ class MockyCall {
            }
     }
     
-    class func getCars(totalPageAmount:  Int = 0, completion: @escaping ([Car], Int, Error?) -> Void) -> Void {
+    class func getCars(totalPageAmount:  Int = 0, completion: @escaping ([CarModel], Int, Error?) -> Void) -> Void {
         
            
         let url = Endpoints.getCars.url
@@ -54,7 +54,7 @@ class MockyCall {
             
             let decoder = JSONDecoder()
             do {
-                let responseObject = try decoder.decode([Car].self, from: data)
+                let responseObject = try decoder.decode([CarModel].self, from: data)
                 DispatchQueue.main.async {
                     completion(responseObject,0, nil)
                 }
