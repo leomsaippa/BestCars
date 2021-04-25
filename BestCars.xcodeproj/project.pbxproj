@@ -23,6 +23,10 @@
 		A3B5BC612634A39A00A4FEEF /* CarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC602634A39A00A4FEEF /* CarExtension.swift */; };
 		A3B5BC642634A4DC00A4FEEF /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC632634A4DC00A4FEEF /* DataController.swift */; };
 		A3B5BC6A2634F8CD00A4FEEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC692634F8CD00A4FEEF /* LoginViewController.swift */; };
+		A3B5BC71263505C300A4FEEF /* UdacityApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC70263505C300A4FEEF /* UdacityApiCall.swift */; };
+		A3B5BC74263505FF00A4FEEF /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC73263505FF00A4FEEF /* LoginResponse.swift */; };
+		A3B5BC77263506A000A4FEEF /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC76263506A000A4FEEF /* Session.swift */; };
+		A3B5BC7A2635077400A4FEEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC792635077400A4FEEF /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		A3B5BC602634A39A00A4FEEF /* CarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarExtension.swift; sourceTree = "<group>"; };
 		A3B5BC632634A4DC00A4FEEF /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		A3B5BC692634F8CD00A4FEEF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A3B5BC70263505C300A4FEEF /* UdacityApiCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityApiCall.swift; sourceTree = "<group>"; };
+		A3B5BC73263505FF00A4FEEF /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		A3B5BC76263506A000A4FEEF /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		A3B5BC792635077400A4FEEF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,7 @@
 		A30D10BE262E476A00C0BC04 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A3B5BC70263505C300A4FEEF /* UdacityApiCall.swift */,
 				A30D10BF262E478100C0BC04 /* MockyCall.swift */,
 				A30D10C2262E47A500C0BC04 /* RequestHelper.swift */,
 				A30D10C5262E4CFF00C0BC04 /* CarResponse.swift */,
@@ -101,6 +110,9 @@
 		A30D10C8262E4D3700C0BC04 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A3B5BC792635077400A4FEEF /* User.swift */,
+				A3B5BC73263505FF00A4FEEF /* LoginResponse.swift */,
+				A3B5BC76263506A000A4FEEF /* Session.swift */,
 				A3B5BC5F2634A38500A4FEEF /* Managed Object Extension */,
 				A3B5BC502634988800A4FEEF /* BestCars.xcdatamodeld */,
 				A3B5BC5A26349E3100A4FEEF /* CarModel.swift */,
@@ -205,13 +217,17 @@
 				A30D10A9262E408500C0BC04 /* AppDelegate.swift in Sources */,
 				A30D10C6262E4CFF00C0BC04 /* CarResponse.swift in Sources */,
 				A3B5BC522634988800A4FEEF /* BestCars.xcdatamodeld in Sources */,
+				A3B5BC71263505C300A4FEEF /* UdacityApiCall.swift in Sources */,
+				A3B5BC7A2635077400A4FEEF /* User.swift in Sources */,
 				A3B5BC5B26349E3100A4FEEF /* CarModel.swift in Sources */,
 				A3B5BC4E2633A4F100A4FEEF /* FavoriteViewController.swift in Sources */,
 				A30D10D7262F862300C0BC04 /* CarViewCell.swift in Sources */,
 				A30D10C0262E478100C0BC04 /* MockyCall.swift in Sources */,
 				A30D10C3262E47A500C0BC04 /* RequestHelper.swift in Sources */,
+				A3B5BC77263506A000A4FEEF /* Session.swift in Sources */,
 				A3B5BC6A2634F8CD00A4FEEF /* LoginViewController.swift in Sources */,
 				A30D10E2262FC6C400C0BC04 /* DetailViewController.swift in Sources */,
+				A3B5BC74263505FF00A4FEEF /* LoginResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

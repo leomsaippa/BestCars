@@ -11,6 +11,12 @@ import UIKit
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
     
+    @IBOutlet weak var checkBoxOutlet:UIButton!{
+            didSet{
+                checkBoxOutlet.setImage(UIImage(named:"unchecked"), for: .normal)
+                checkBoxOutlet.setImage(UIImage(named:"checked"), for: .selected)
+            }
+        }
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
@@ -19,15 +25,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var switchConnected: UISwitch!
+    let signUpUrl = UdacityApiCall.Endpoints.udacitySignUp.url
     
-   // let signUpUrl = UdacityApiCall.Endpoints.udacitySignUp.url
+    @IBOutlet weak var stackViewHorizontal: UIStackView!
     
     var emailFieldIsEmpty = true
     var passwordFieldIsEmpty = true
     
     @IBAction func signUpBtnClicked(_ sender: Any) {
         setIndicator(true)
-      //  UIApplication.shared.open(signUpUrl, options: [:], completionHandler: nil)
+//        UIApplication.shared.open(signUpUrl, options: [:], completionHandler: nil)
     }
     
     override func viewDidLoad() {
@@ -38,6 +46,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordField.delegate = self
         isToEnableButton(false, button: loginButton)
         self.hideKeyboardWhenTappedAround()
+        
+        switchConnected.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+        
+        let defaults = UserDefaults.standard
+        
+        let email = defaults.string(forKey: "email")
+        let password = defaults.string(forKey: "password")
+        let isEmpty = email?.isEmpty ?? true
+        print("email \(email) pass \(password) isEmpty \(isEmpty)")
+        if(!isEmpty){
+            showAlert(message: "Logging, pleae wait", title: "Logging")
+            setIndicator(true)
+            UdacityApiCall.login(email: email ?? "", password: password ?? "", completion: handleLoginResponse(success:error:))
+        }
+
     }
 
 
@@ -46,17 +69,35 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordField.text = ""
     }
     
+    @IBAction func checkBox(_ sender: UIButton) {
+        
+        sender.checkboxAnimation {
+               print("I'm done")
+               //here you can also track the Checked, UnChecked state with sender.isSelected
+               print(sender.isSelected)
+               
+           }
+    }
     @IBAction func onLoginBtnClicked(_ sender: Any) {
         setIndicator(true)
-       // UdacityApiCall.login(email: self.emailField.text ?? "", password: self.passwordField.text ?? "", completion: handleLoginResponse(success:error:))
+        UdacityApiCall.login(email: self.emailField.text ?? "", password: self.passwordField.text ?? "", completion: handleLoginResponse(success:error:))
     }
     
+    @IBAction func onSwitchChanger(_ sender: Any) {
+        print(switchConnected.isOn)
+    }
     func handleLoginResponse(success: Bool, error: Error?) {
         setIndicator(false)
         if success {
             DispatchQueue.main.async {
                 print("SUCCESS")
-                self.performSegue(withIdentifier: "loginClick", sender: nil)
+                if(self.switchConnected.isOn){
+                    let defaults = UserDefaults.standard
+                    defaults.set(self.emailField.text, forKey: "email")
+                    
+                    defaults.set(self.passwordField.text, forKey: "password")
+                }
+               self.performSegue(withIdentifier: "loginClick", sender: nil)
                 
             }
         } else {
@@ -181,4 +222,24 @@ extension UIViewController {
         view.endEditing(true)
     }
 
+}
+
+extension UIButton {
+    //MARK:- Animate check mark
+    func checkboxAnimation(closure: @escaping () -> Void){
+        guard let image = self.imageView else {return}
+        
+        UIView.animate(withDuration: 0.1, delay: 0.1, options: .curveLinear, animations: {
+            image.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            
+        }) { (success) in
+            UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear, animations: {
+                self.isSelected = !self.isSelected
+                //to-do
+                closure()
+                image.transform = .identity
+            }, completion: nil)
+        }
+        
+    }
 }
