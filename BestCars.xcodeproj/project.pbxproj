@@ -20,6 +20,9 @@
 		A3B5BC4E2633A4F100A4FEEF /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC4D2633A4F100A4FEEF /* FavoriteViewController.swift */; };
 		A3B5BC522634988800A4FEEF /* BestCars.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC502634988800A4FEEF /* BestCars.xcdatamodeld */; };
 		A3B5BC5B26349E3100A4FEEF /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC5A26349E3100A4FEEF /* CarModel.swift */; };
+		A3B5BC612634A39A00A4FEEF /* CarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC602634A39A00A4FEEF /* CarExtension.swift */; };
+		A3B5BC642634A4DC00A4FEEF /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC632634A4DC00A4FEEF /* DataController.swift */; };
+		A3B5BC6A2634F8CD00A4FEEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC692634F8CD00A4FEEF /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		A3B5BC4D2633A4F100A4FEEF /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		A3B5BC512634988800A4FEEF /* carModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = carModel.xcdatamodel; sourceTree = "<group>"; };
 		A3B5BC5A26349E3100A4FEEF /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		A3B5BC602634A39A00A4FEEF /* CarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarExtension.swift; sourceTree = "<group>"; };
+		A3B5BC632634A4DC00A4FEEF /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		A3B5BC692634F8CD00A4FEEF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +101,10 @@
 		A30D10C8262E4D3700C0BC04 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A3B5BC5F2634A38500A4FEEF /* Managed Object Extension */,
 				A3B5BC502634988800A4FEEF /* BestCars.xcdatamodeld */,
 				A3B5BC5A26349E3100A4FEEF /* CarModel.swift */,
+				A3B5BC632634A4DC00A4FEEF /* DataController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,8 +116,17 @@
 				A30D10DC262F909E00C0BC04 /* CarTableViewController.swift */,
 				A30D10E1262FC6C400C0BC04 /* DetailViewController.swift */,
 				A3B5BC4D2633A4F100A4FEEF /* FavoriteViewController.swift */,
+				A3B5BC692634F8CD00A4FEEF /* LoginViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A3B5BC5F2634A38500A4FEEF /* Managed Object Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A3B5BC602634A39A00A4FEEF /* CarExtension.swift */,
+			);
+			path = "Managed Object Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +200,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30D10DD262F909E00C0BC04 /* CarTableViewController.swift in Sources */,
+				A3B5BC642634A4DC00A4FEEF /* DataController.swift in Sources */,
+				A3B5BC612634A39A00A4FEEF /* CarExtension.swift in Sources */,
 				A30D10A9262E408500C0BC04 /* AppDelegate.swift in Sources */,
 				A30D10C6262E4CFF00C0BC04 /* CarResponse.swift in Sources */,
 				A3B5BC522634988800A4FEEF /* BestCars.xcdatamodeld in Sources */,
@@ -191,6 +210,7 @@
 				A30D10D7262F862300C0BC04 /* CarViewCell.swift in Sources */,
 				A30D10C0262E478100C0BC04 /* MockyCall.swift in Sources */,
 				A30D10C3262E47A500C0BC04 /* RequestHelper.swift in Sources */,
+				A3B5BC6A2634F8CD00A4FEEF /* LoginViewController.swift in Sources */,
 				A30D10E2262FC6C400C0BC04 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
