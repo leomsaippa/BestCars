@@ -7,10 +7,16 @@
 
 import Foundation
 import UIKit
+import CoreData
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController,NSFetchedResultsControllerDelegate {
     var test = false
-    var currentCar: CarModel!
+    var currentCar: Car!
+    var fetchedResultsController: NSFetchedResultsController<Car>!
+
+    let dataController = DataControllerInstance.dataControllerInstance.getDataController()
+    var isFav = false
+
     
     @IBOutlet weak var detailImage: UIImageView!
     
@@ -26,13 +32,26 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         nameTextView.text = currentCar.name
         priceTextView.text = currentCar.price
-        descriptionTextView.text = currentCar.description
+        descriptionTextView.text = currentCar.descriptionText
         
-        let url = URL(string: currentCar.avatar)
+        let url = URL(string: currentCar.avatar!)
         
         if let imageData = try? Data(contentsOf: url!) {
             let image = UIImage(data: imageData)!
             detailImage.image = image
+        }
+        let array =  UserDefaults.standard.stringArray(forKey: currentCar.id!)
+        print("current \(array?[0])")
+        print("current \(array?[1])")
+      
+        if(array?[0] != nil){
+            isFav =  UserDefaults.standard.bool(forKey: array![0])
+            print("isFav \(isFav)")
+        }
+        favBtn.image = UIImage(systemName: "star")
+
+        if(isFav){
+            favBtn.image = UIImage(systemName: "star.fill")
         }
     }
 
@@ -41,29 +60,52 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func onFavBtnClicked(_ sender: Any) {
-     
-        if(!test){
+        
+      
+        if(isFav) {
             favBtn.image = UIImage(systemName: "star")
-            let leo =  UserDefaults.standard.integer(forKey: "id")
-            
-            print("test \(leo)")
-
-            if(leo != 0) {
-                UserDefaults.standard.removeObject(forKey: "id")
-
-            }
-          
-
-           // favBtn.title = "Text"
+            UserDefaults.standard.removeObject(forKey: currentCar.id!)
+//            var fav = FavoriteCars.instance.getFavoriteCars()
+//            if let idx = fav?.firstIndex(where: { $0 === currentCar }) {
+//                fav?.remove(at: idx)
+//            }
+//            FavoriteCars.instance.setFavoriteCars(cars: fav!)
         } else {
             favBtn.image = UIImage(systemName: "star.fill")
-            UserDefaults.standard.set(currentCar.id, forKey: "id")
+            UserDefaults.standard.setValue(true, forKey: currentCar.name!)
+            var array = [currentCar.name,currentCar.avatar]
+
+
+            var fav = FavoriteCars.instance.getFavoriteCars()
+            fav?.append(currentCar)
+            FavoriteCars.instance.setFavoriteCars(cars: fav!)
+            UserDefaults.standard.setValue(array, forKey: currentCar.id!)
+
+
+            //save()
 
         }
-        test = !test
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
 
-        //favBtn.image = img
-        
     }
     
+    func save() {
+        let managedContext = dataController?.persistentContainer.viewContext
+
+        let entity = NSEntityDescription.entity(forEntityName: "Car", in: managedContext!)
+      
+        let car = NSManagedObject(entity: entity!,
+                                   insertInto: managedContext)
+    
+        car.setValue(currentCar.name, forKeyPath: "name")
+        car.setValue(currentCar.id, forKey: "id")
+        car.setValue(currentCar.price, forKey: "price")
+//        car.setValue(imageURL, forKey: "carUrl")
+      
+//      do {
+//        try managedContext!.save()
+//      } catch let error as NSError {
+//        print("Could not save. \(error), \(error.userInfo)")
+//      }
+    }
 }
