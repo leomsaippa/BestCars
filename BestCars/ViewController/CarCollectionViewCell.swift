@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import UIKit
+
+class CarCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var collectionImage: UIImageView!
+    
+    @IBOutlet weak var collectionNameText: UILabel!
+    
+    static let reuseIdentifier = "CarCollectionViewCell"
+
+}
