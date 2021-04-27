@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--CarTableViewController-->
         <scene sceneID="S41-rb-Gfd">
             <objects>
-                <tableViewController id="iVW-Mx-jck" customClass="CarTableViewController" customModule="BestCars" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="CarTableViewController" id="iVW-Mx-jck" customClass="CarTableViewController" customModule="BestCars" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CCB-xm-T7v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,48 +61,12 @@
             </objects>
             <point key="canvasLocation" x="-422" y="342"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="uXX-cq-idy">
-            <objects>
-                <collectionViewController id="IW2-Vt-GaQ" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="nlJ-xe-4Pm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CIt-fb-Dae">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TbD-ee-WAn">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OwE-nY-MGC">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="IW2-Vt-GaQ" id="MKk-Lh-jpm"/>
-                            <outlet property="delegate" destination="IW2-Vt-GaQ" id="VDa-xr-CGJ"/>
-                        </connections>
-                    </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="rZO-op-OQT"/>
-                    <navigationItem key="navigationItem" id="PnH-po-Hqz"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="urN-AH-iM6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-416" y="1056"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cci-BV-q5k">
             <objects>
                 <navigationController id="BLG-Jn-SSe" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7gB-5a-vaR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -125,7 +89,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="iVW-Mx-jck" kind="relationship" relationship="viewControllers" id="Ms8-Lq-aZb"/>
-                        <segue destination="IW2-Vt-GaQ" kind="relationship" relationship="viewControllers" id="FBl-As-EFe"/>
+                        <segue destination="oce-Sv-8Qy" kind="relationship" relationship="viewControllers" id="vee-9q-Heh"/>
+                        <segue destination="BgM-Zh-UfO" kind="relationship" relationship="viewControllers" id="SVk-nS-3xh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XD9-S5-VAE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -316,9 +281,105 @@
             </objects>
             <point key="canvasLocation" x="-3142.5" y="1113.75"/>
         </scene>
+        <!--FavoriteViewController-->
+        <scene sceneID="Lx9-0a-gXv">
+            <objects>
+                <tableViewController title="FavoriteViewController" id="BgM-Zh-UfO" customClass="FavoriteViewController" customModule="BestCars" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aAh-u7-3L0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteViewCell" id="FqT-aH-FOR" customClass="FavoriteViewCell" customModule="BestCars" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FqT-aH-FOR" id="NjW-gq-Azd">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ef1-Ot-yeI">
+                                            <rect key="frame" x="111" y="4" width="97" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="favoriteTextField" destination="ef1-Ot-yeI" id="b3R-FE-Ij8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BgM-Zh-UfO" id="Dkt-xC-GFL"/>
+                            <outlet property="delegate" destination="BgM-Zh-UfO" id="NDJ-GJ-f9i"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="aX5-Jf-fh3"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9No-pz-S5B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-745" y="1926"/>
+        </scene>
+        <!--CarCollectionViewController-->
+        <scene sceneID="pX0-Kc-NAq">
+            <objects>
+                <viewController title="CarCollectionViewController" id="oce-Sv-8Qy" customClass="CarCollectionViewController" customModule="BestCars" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="c65-Y1-F2Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rbl-59-TiE">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="CarCollectionViewCell" id="VWh-ht-itW" customClass="CarCollectionViewCell" customModule="BestCars" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gpK-9i-F1q">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Lm-pd-IcR">
+                                            <rect key="frame" x="-30" y="0.0" width="151.5" height="40.5"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="etO-l0-PG1">
+                                                    <rect key="frame" x="0.0" y="2.5" width="151.5" height="15.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CollectionNameText" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60U-nD-knM">
+                                                    <rect key="frame" x="0.0" y="20" width="151.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="collectionImage" destination="etO-l0-PG1" id="6TG-Ul-BST"/>
+                                    <outlet property="collectionNameText" destination="60U-nD-knM" id="xoW-Wm-Dnd"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Item" id="xWY-d5-Zw5"/>
+                    <connections>
+                        <outlet property="collectionView" destination="c65-Y1-F2Y" id="p3W-MS-UBD"/>
+                        <outlet property="flowLayout" destination="rbl-59-TiE" id="MIC-se-8EP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mvC-2H-fd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="1009"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo-u" width="62" height="62"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
