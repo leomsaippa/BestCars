@@ -32,6 +32,8 @@ class CarCollectionViewController: UIViewController {
         collectionView.layoutMargins = UIEdgeInsets(top: 20, left: 8, bottom: 0, right: 0)
 
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.layer.borderWidth = 1
+
 
         let space:CGFloat = 3.0
         let widthDimension = (view.frame.size.width - (2 * space)) / 3.0

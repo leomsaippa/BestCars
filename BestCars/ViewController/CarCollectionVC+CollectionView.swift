@@ -35,8 +35,10 @@ extension CarCollectionViewController: UICollectionViewDelegate, UICollectionVie
             let image = UIImage(data: imageData)!
             //TODO: Fix image size 
             cell.collectionImage.image = image
+            cell.collectionImage.contentMode = .scaleAspectFit
             
-            cell.collectionImage.sizeToFit()
+            cell.contentView.layer.borderColor = UIColor.black.cgColor
+            cell.contentView.layer.borderWidth = 1.0
         }
 
         return cell
