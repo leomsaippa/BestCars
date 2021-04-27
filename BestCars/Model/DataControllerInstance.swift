@@ -6,3 +6,23 @@
 //
 
 import Foundation
+import UIKit
+
+class DataControllerInstance: NSObject {
+    
+    static let dataControllerInstance =  DataControllerInstance()
+    
+    var dataController:DataController?
+
+   private override init(){
+    }
+    
+    func getDataController() -> DataController? {
+        return dataController
+    }
+    
+    func setDataController(currentData: DataController?){
+        self.dataController = currentData
+    }
+    
+}
