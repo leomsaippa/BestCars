@@ -50,7 +50,7 @@
                             <outlet property="delegate" destination="iVW-Mx-jck" id="3tD-hh-hUh"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="azE-2V-Vvq"/>
+                    <tabBarItem key="tabBarItem" title="Cars" image="bolt.car" catalog="system" id="azE-2V-Vvq"/>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Lxa-6a-A4d"/>
                     <connections>
                         <outlet property="activityIndicator" destination="M4X-BY-fIA" id="m2Z-KL-zOu"/>
@@ -77,11 +77,17 @@
             </objects>
             <point key="canvasLocation" x="-3977" y="1115"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Cars-->
         <scene sceneID="jj4-Wz-gYl">
             <objects>
-                <tabBarController id="3z9-kc-giV" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="oE3-Tf-gjd"/>
+                <tabBarController id="3z9-kc-giV" customClass="TabBarController" customModule="BestCars" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Cars" id="oE3-Tf-gjd">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="z9b-3F-axW">
+                            <connections>
+                                <action selector="btnLogoutClicked:" destination="3z9-kc-giV" id="gAh-RQ-NyW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UV6-zu-fKC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -315,7 +321,7 @@
                             <outlet property="delegate" destination="BgM-Zh-UfO" id="NDJ-GJ-f9i"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="aX5-Jf-fh3"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="star" catalog="system" id="aX5-Jf-fh3"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9No-pz-S5B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -337,7 +343,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="CarCollectionViewCell" id="VWh-ht-itW" customClass="CarCollectionViewCell" customModule="BestCars" customModuleProvider="target">
-                                <rect key="frame" x="77" y="0.0" width="167" height="129"/>
+                                <rect key="frame" x="76" y="0.0" width="167" height="129"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gpK-9i-F1q">
                                     <rect key="frame" x="0.0" y="0.0" width="167" height="129"/>
@@ -364,7 +370,7 @@
                             </collectionViewCell>
                         </cells>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="xWY-d5-Zw5"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="folder" catalog="system" id="xWY-d5-Zw5"/>
                     <connections>
                         <outlet property="collectionView" destination="c65-Y1-F2Y" id="p3W-MS-UBD"/>
                         <outlet property="flowLayout" destination="rbl-59-TiE" id="MIC-se-8EP"/>
@@ -376,8 +382,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bolt.car" catalog="system" width="128" height="93"/>
+        <image name="folder" catalog="system" width="128" height="97"/>
         <image name="logo-u" width="62" height="62"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

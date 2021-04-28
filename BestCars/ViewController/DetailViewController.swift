@@ -65,11 +65,7 @@ class DetailViewController: UIViewController,NSFetchedResultsControllerDelegate 
         if(isFav) {
             favBtn.image = UIImage(systemName: "star")
             UserDefaults.standard.removeObject(forKey: currentCar.id!)
-//            var fav = FavoriteCars.instance.getFavoriteCars()
-//            if let idx = fav?.firstIndex(where: { $0 === currentCar }) {
-//                fav?.remove(at: idx)
-//            }
-//            FavoriteCars.instance.setFavoriteCars(cars: fav!)
+            UserDefaults.standard.removeObject(forKey: currentCar.name!)
         } else {
             favBtn.image = UIImage(systemName: "star.fill")
             UserDefaults.standard.setValue(true, forKey: currentCar.name!)

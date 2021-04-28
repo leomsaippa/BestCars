@@ -34,6 +34,7 @@
 		A3B5BC7A2635077400A4FEEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC792635077400A4FEEF /* User.swift */; };
 		A3B5BC7D2635FB1400A4FEEF /* FavoriteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC7C2635FB1400A4FEEF /* FavoriteViewCell.swift */; };
 		A3B5BC852636FA4900A4FEEF /* DataControllerInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5BC842636FA4900A4FEEF /* DataControllerInstance.swift */; };
+		A3EB7BAD2638DCF800B521F1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB7BAC2638DCF800B521F1 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		A3B5BC792635077400A4FEEF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A3B5BC7C2635FB1400A4FEEF /* FavoriteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewCell.swift; sourceTree = "<group>"; };
 		A3B5BC842636FA4900A4FEEF /* DataControllerInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerInstance.swift; sourceTree = "<group>"; };
+		A3EB7BAC2638DCF800B521F1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				A302BC80263774D90074CAEB /* CarCollectionVC+CollectionView.swift */,
 				A302BC83263775C50074CAEB /* CarCollectionVC+NSFetchResults.swift */,
 				A302BC86263775EF0074CAEB /* CarCollectionViewCell.swift */,
+				A3EB7BAC2638DCF800B521F1 /* TabBarController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				A3B5BC4E2633A4F100A4FEEF /* FavoriteViewController.swift in Sources */,
 				A302BC84263775C50074CAEB /* CarCollectionVC+NSFetchResults.swift in Sources */,
 				A30D10D7262F862300C0BC04 /* CarViewCell.swift in Sources */,
+				A3EB7BAD2638DCF800B521F1 /* TabBarController.swift in Sources */,
 				A30D10C0262E478100C0BC04 /* MockyCall.swift in Sources */,
 				A30D10C3262E47A500C0BC04 /* RequestHelper.swift in Sources */,
 				A3B5BC77263506A000A4FEEF /* Session.swift in Sources */,

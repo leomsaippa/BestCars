@@ -23,6 +23,10 @@ class CarTableViewController: UITableViewController, NSFetchedResultsControllerD
         self.tableView.dataSource = self
         activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
         activityIndicator.color = UIColor.black
+//        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationController?.navigationItem.hidesBackButton = true
+
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
