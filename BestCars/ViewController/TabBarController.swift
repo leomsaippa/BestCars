@@ -15,9 +15,9 @@ class TabBarController: UITabBarController {
 
     @IBAction func btnLogoutClicked(_ sender: Any) {
                 UdacityApiCall.logout {
-                    self.deleteAllData("Car")
 
                     DispatchQueue.main.async {
+                        self.deleteAllData("Car")
                         self.navigationController?.popViewController(animated: true)
                    
                     }

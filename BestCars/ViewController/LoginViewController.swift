@@ -35,7 +35,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signUpBtnClicked(_ sender: Any) {
         setIndicator(true)
-//        UIApplication.shared.open(signUpUrl, options: [:], completionHandler: nil)
+        UIApplication.shared.open(signUpUrl, options: [:], completionHandler: nil)
     }
     
     override func viewDidLoad() {
