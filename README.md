@@ -1,7 +1,7 @@
 # BestCars
  
 BestCars is an app which shows to user a list of best cars according to [Car And Drive](https://www.caranddriver.com/shopping-advice/a35536605/2021-editors-choice/) magazine.
-Logging in the app, it was used Udacity API, so it's necessary to have an Udacity account and setup correctly to run the app. [Here] (https://auth.udacity.com/sign-up) you can check more information.
+Logging in the app, it was used Udacity API, so it's necessary to have an Udacity account and setup correctly to run the app. [Here](https://auth.udacity.com/sign-up) you can check more information.
 
 After logging, user can choose between three Tab items:
 
