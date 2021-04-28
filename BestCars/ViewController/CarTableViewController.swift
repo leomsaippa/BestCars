@@ -11,6 +11,7 @@ import CoreData
 
 class CarTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
+
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let carViewCell = "CarViewCell"
@@ -25,6 +26,11 @@ class CarTableViewController: UITableViewController, NSFetchedResultsControllerD
         activityIndicator.color = UIColor.black
 //        self.navigationItem.setHidesBackButton(true, animated: false)
         self.navigationController?.navigationItem.hidesBackButton = true
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl!.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+//          tableView.addSubview(refreshControl) // not required when using UITableViewController
+
 
 
     }
@@ -88,42 +94,53 @@ class CarTableViewController: UITableViewController, NSFetchedResultsControllerD
           }
         
 
-        //TODO: Check before call
         MockyCall.getCars(completion: {(cars,totalPages, error) in
-            if cars.count > 0 {
-                print(cars)
-                for car in cars {
-                    let currentCar = Car(context: self.dataController!.viewContext)
-                    let imageURL = URL(string: car.avatar)
-                    guard let imageData = try? Data(contentsOf: imageURL!) else {
-                        print("Image does not exist at \(String(describing: imageURL))")
-                        return
-                    }
-                    currentCar.avatar = car.avatar
-                    currentCar.id = car.id
-                    currentCar.price = car.price
-                    currentCar.name = car.name
-                    currentCar.descriptionText = car.description
-                    self.carList.append(currentCar)
-                    
-                    do {
-                        try self.dataController!.viewContext.save()
-                    } catch {
-                        print("Unable to save the photo")
-                    }
-                    
-                    
-                    //self.cars = cars
-                 
-                    DispatchQueue.main.async {
-                        self.activityIndicator.isHidden = true
-                        self.activityIndicator.stopAnimating()
-                        self.tableView.reloadData()
+            if(error != nil) {
+                self.showAlert(message: "Network error, please try again!", title: "Error while downloading cars information")
+            } else {
+                if cars.count > 0 {
+                    print(cars)
+                    for car in cars {
+                        let currentCar = Car(context: self.dataController!.viewContext)
+                        let imageURL = URL(string: car.avatar)
+                        guard let imageData = try? Data(contentsOf: imageURL!) else {
+                            print("Image does not exist at \(String(describing: imageURL))")
+                            return
+                        }
+                        currentCar.avatar = car.avatar
+                        currentCar.id = car.id
+                        currentCar.price = car.price
+                        currentCar.name = car.name
+                        currentCar.descriptionText = car.description
+                        self.carList.append(currentCar)
                         
+                        do {
+                            try self.dataController!.viewContext.save()
+                        } catch {
+                            print("Unable to save the photo")
+                        }
+                        
+                        
+                        //self.cars = cars
+                     
+                        DispatchQueue.main.async {
+                            self.activityIndicator.isHidden = true
+                            self.activityIndicator.stopAnimating()
+                            self.tableView.reloadData()
+                            
+                        }
                     }
                 }
             }
+            
         })
         
-    }    
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        self.getCars()
+    }
 }
+
+
+

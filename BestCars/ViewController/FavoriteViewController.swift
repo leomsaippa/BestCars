@@ -20,10 +20,7 @@ class FavoriteViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-     //   cars = FavoriteCars.instance.getFavoriteCars()
-        
+                
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,8 +39,6 @@ class FavoriteViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: favoriteViewCellId, for: indexPath)
         
-       // cell.textLabel!.text = self.carList[indexPath.row].name
-        //print("setting")
         cell.textLabel!.text =  cars?[indexPath.row].name
         return cell
     }
@@ -55,49 +50,5 @@ class FavoriteViewController: UITableViewController {
 
             self.tableView.reloadData()
         }
-
-   }
-//
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteViewCellId , for: indexPath) as! FavoriteViewCell
-//        print(indexPath)
-//        cell.collectionImage.layoutMargins = UIEdgeInsets(top: 20, left: 8, bottom: 0, right: 0)
-//        cell.collectionNameText.text = cars[indexPath.row].name
-//
-//        //cell.nameTextField.text = "test"
-//       return cell
-//    }
-//
-//      override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        print("Click item")
-////             self.performSegue(withIdentifier: "memeCollectionVCtoDetailVC", sender: self)
-//         }
-    
-//
-//    fileprivate func setupFetchedResultsController() {
-//        let fetchRequest:NSFetchRequest<Car> = Car.fetchRequest()
-//
-////        if let car = currentCar {
-////            let predicate = NSPredicate(format: "car == %@", car)
-////            fetchRequest.predicate = predicate
-////
-////            print("Name: \(car.objectID) \(car.price)")
-////        }
-//        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
-//        fetchRequest.sortDescriptors = [sortDescriptor]
-//
-//        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-//                                                              managedObjectContext: dataController!.viewContext,
-//                                                              sectionNameKeyPath: nil, cacheName: "car")
-//        fetchedResultsController.delegate = self
-//     print(fetchedResultsController.cacheName!)
-//     print(fetchedResultsController.fetchedObjects?.count ?? 0)
-//
-//        do {
-//            try fetchedResultsController.performFetch()
-//        } catch {
-//            fatalError("The fetch could not be performed: \(error.localizedDescription)")
-//        }
-//    }
-    
+    }
 }
