@@ -31,7 +31,11 @@ class DetailViewController: UIViewController,NSFetchedResultsControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextView.text = currentCar.name
-        priceTextView.text = currentCar.price
+        var price = currentCar.price!
+        price.insert("$", at: price.startIndex) // prints !hello
+        price.insert(",", at: price.index(price.startIndex, offsetBy: 3))
+        priceTextView.text = price
+
         descriptionTextView.text = currentCar.descriptionText
         
         let url = URL(string: currentCar.avatar!)
@@ -96,12 +100,5 @@ class DetailViewController: UIViewController,NSFetchedResultsControllerDelegate 
         car.setValue(currentCar.name, forKeyPath: "name")
         car.setValue(currentCar.id, forKey: "id")
         car.setValue(currentCar.price, forKey: "price")
-//        car.setValue(imageURL, forKey: "carUrl")
-      
-//      do {
-//        try managedContext!.save()
-//      } catch let error as NSError {
-//        print("Could not save. \(error), \(error.userInfo)")
-//      }
     }
 }
