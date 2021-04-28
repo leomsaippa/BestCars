@@ -56,7 +56,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let isEmpty = email?.isEmpty ?? true
         print("email \(email) pass \(password) isEmpty \(isEmpty)")
         if(!isEmpty){
-            showAlert(message: "Logging, pleae wait", title: "Logging")
+            showAlert(message: "Logging, please wait", title: "Logging")
             setIndicator(true)
             UdacityApiCall.login(email: email ?? "", password: password ?? "", completion: handleLoginResponse(success:error:))
         }
@@ -101,9 +101,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
             }
         } else {
-            setIndicator(false)
-                showAlert(message: "Wrong credential.", title: "Login Error")
+            DispatchQueue.main.async {
 
+                self.setIndicator(false)
+                self.showAlert(message: "Something went wrong", title: "Login Error")
+
+            }
         }
     }
     
