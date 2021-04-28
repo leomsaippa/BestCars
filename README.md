@@ -1,19 +1,26 @@
 # BestCars
  
 BestCars is an app which shows to user a list of best cars according to [Car And Drive](https://www.caranddriver.com/shopping-advice/a35536605/2021-editors-choice/) magazine.
-Logging in the app, it was used Udacity API, so it's necessary to have an Udacity account and setup correctly to run the app. [Here](https://auth.udacity.com/sign-up) you can check more information.
 
 
 ![Login Screen](https://github.com/leomsaippa/BestCars/tree/main/BestCars/Screenshots/login.png)
 
+Logging in the app, it was used Udacity API, so it's necessary to have an Udacity account and setup correctly to run the app. [Here](https://auth.udacity.com/sign-up) you can check more information.
+
 
 After logging, user can choose between three Tab items:
 
+![Table List](https://github.com/leomsaippa/BestCars/tree/main/BestCars/Screenshots/listcar.png)
 1 - A Table list, which allows user to click and see more information in a Detail screen
 
+![Collection List](https://github.com/leomsaippa/BestCars/tree/main/BestCars/Screenshots/collection.png)
 2 - A Collection View which shows just basic information about car
 
+![Favorite](https://github.com/leomsaippa/BestCars/tree/main/BestCars/Screenshots/favorite.png)
 3 - A favorite Table, which allows user to see cars which was favorited by user
+
+![Detail Screen](https://github.com/leomsaippa/BestCars/tree/main/BestCars/Screenshots/detail.png)
+Detail Screen show information about car, like its name, price and a small magazine review
 
 NSUSerDefaults was used in two moments.
 
